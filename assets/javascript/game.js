@@ -27,15 +27,10 @@ console.log(generateUnderscore());
 document.addEventListener("keypress", letterPressed); 
 
 function letterPressed(event) {
-    var keycode = event.keyCode;
-    var letter = String.fromCharCode(keycode);
+    //var keycode = event.keyCode;
+    var letter = String.fromCharCode(event.keyCode);
     console.log(letter);
-    //console.log(event.keyCode);
-    //console.log(String.fromCharCode(event.keyCode));
 };
-//document.addEventListener("keypress", (event) => {
-   // var keyword = String.fromCharCode(event.keycode);
-//});
 
 var playerGuesses = [];
 //check correct guess

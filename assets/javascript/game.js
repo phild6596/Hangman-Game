@@ -7,12 +7,27 @@ var words = ["star wars",
     "darth vader",
     "lando calrissian",
     "anakin skywalker",
-    "padme amidala",
+    "padme amidala",];
 //random words
-var randomWords;
-//underscore replacement
-var underScores = [];
+var randomWords = Math.floor(Math.random() * words.length);
+var chosenWord = words[randomWords];
+var underScore = [];
+console.log(chosenWord);
+
+//create underscores
+function generateUnderscore()  {
+    for (i = 0; i < chosenWord.length; i++) {
+        underScore.push("_");
+    }
+    return underScore;
+}
+
+console.log(generateUnderscore());
 //Users guess
+//document.addEventListener("keypress", (event) => {
+   // var keyword = String.fromCharCode(event.keycode);
+//});
+
 var playerGuesses = [];
 //check correct guess
 var correctGuesses = []
@@ -25,12 +40,13 @@ var wins = 0;
 var losses = 0;
 
 //start game function
-function startOfGame() {
-    var randomWords = words[Math.floor(Math.random() * words.length)];
-    for (i = 0; i < words.length; i++) {
-        console.log(randomWords);
-    }
-}
+//function startOfGame() {
+   // var 
+    //for (i = 0; i < words.length; i++) {
+       // console.log(randomWords);
+    //}
+//}
 
 
-startOfGame();
+//startOfGame();
+

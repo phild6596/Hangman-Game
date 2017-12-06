@@ -11,6 +11,8 @@ var words = ["star wars",
 //random words
 var randomWords = Math.floor(Math.random() * words.length);
 var chosenWord = words[randomWords];
+var rightLetter = [];
+var wrongLetter = [];
 var underScore = [];
 console.log(chosenWord);
 
@@ -20,16 +22,20 @@ function generateUnderscore()  {
         underScore.push("_");
      }
     return underScore;
-}
+}; console.log(generateUnderscore());
 
-console.log(generateUnderscore());
 //Users guess
 document.addEventListener("keypress", letterPressed); 
 
 function letterPressed(event) {
-    //var keycode = event.keyCode;
     var letter = String.fromCharCode(event.keyCode);
-    console.log(letter);
+    console.log(chosenWord.indexOf(letter));
+
+    //if players guess is right
+    if (chosenWord.indexOf(letter) > -1){
+    //push into rightWord array
+    rightLetter.push(letter);
+    }
 };
 
 var playerGuesses = [];

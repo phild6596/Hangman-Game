@@ -32,12 +32,12 @@ h3 {
     font-size: 120px;
 }
 
-.underscores {
+#Star_Wars_words {
     float: right;
     width: 50%;
     color: red;
     text-align: center;
-    font-size: 120px;
+    font-size: 80px;
 }
 
 .rightGuess {

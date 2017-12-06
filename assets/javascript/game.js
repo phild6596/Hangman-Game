@@ -18,12 +18,21 @@ console.log(chosenWord);
 function generateUnderscore()  {
     for (i = 0; i < chosenWord.length; i++) {
         underScore.push("_");
-    }
+     }
     return underScore;
 }
 
 console.log(generateUnderscore());
 //Users guess
+document.addEventListener("keypress", letterPressed); 
+
+function letterPressed(event) {
+    var keycode = event.keyCode;
+    var letter = String.fromCharCode(keycode);
+    console.log(letter);
+    //console.log(event.keyCode);
+    //console.log(String.fromCharCode(event.keyCode));
+};
 //document.addEventListener("keypress", (event) => {
    // var keyword = String.fromCharCode(event.keycode);
 //});

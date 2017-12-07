@@ -1,9 +1,9 @@
-body {
+/*body {
    background-image: url(../images/starwars.png);
    background-position: center top;
    background-repeat: no-repeat;
    background-color: black;
-}
+}*/
 
 header {
     font: 24px;
@@ -32,7 +32,7 @@ h3 {
     font-size: 120px;
 }
 
-#Star_Wars_words {
+.Star_Wars_words {
     float: right;
     width: 50%;
     color: red;

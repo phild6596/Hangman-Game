@@ -8,23 +8,27 @@ var words = ["star wars",
     "lando calrissian",
     "anakin skywalker",
     "padme amidala"];
-//random words
 
+ //Declared variables
 var rightLetter = [];
 var wrongLetter = [];
 var underScore = [];
-var randomWords = Math.floor(Math.random() * words.length);
-//answer array
-var chosenWords = words[randomWords];
 var underScore = [];
+var randomWords = Math.floor(Math.random() * words.length);
+var chosenWords = words[randomWords];
+var starWarsNames = document.getElementsByClassName("Star_Wars_words");
+var correctGuess = document.getElementsByClassName("rightGuess");
+var incorrectGuess = document.getElementsByClassName("wrongGuess");
+
+//random word array
+
 console.log(chosenWords);
 function generateUnderscore() {
     for (i = 0; i < chosenWords.length; i++) {
         underScore.push("_");
-    }   
+    }  
     return underScore;
 }
-console.log(generateUnderscore());
 
 //Game Loop
 document.addEventListener("keypress", letterPressed);
@@ -34,79 +38,19 @@ function letterPressed(event) {
     if (chosenWords.indexOf(letter) > -1) {
         rightLetter.push(letter);
         underScore[chosenWords.indexOf(letter)] = letter;
+        starWarsNames[0].innerHTML = underScore.join(" ");
+        correctGuess[0].innerHTML = rightLetter;
         if(underScore.join(" ") == chosenWords) {
             alert("The force is strong with you!");
         }
     }
-
     else {
         wrongLetter.push(letter);
+        incorrectGuess[0].innerHTML = wrongLetter;
     }
-        
-        console.log(rightLetter);
-        console.log(wrongLetter);
-        //push into chosenWords array
-        //rightLetter.push(letter);
-        //replace underscore with letter
-            //underScore[chosenWords.indexOf(letter)] = letter;
-        
-       // console.log(rightLetter);
-} 
-
-
-//console.log(chosenWords);
-//if (remainingLetters < -1) {
-    //var PlayerProgress = document.getElementById("Star_Wars_words");
-    //PlayerProgress.innerHTML = chosenWords.join(" ");
-    //user guess
-
-
-//}
-
-//create underscores
-//function generateUnderscore()  {
-  //  for (i = 0; i < chosenWord.length; i++) {
-    //    underScore.push("_");
-     //}
-    //return underScore;
-//}; console.log(generateUnderscore());
-
-//Users guess
-//document.addEventListener("keypress", letterPressed); 
-
-//function letterPressed(event) {
-  //  var letter = String.fromCharCode(event.keyCode);
-    //console.log(chosenWord.indexOf(letter));
-
-    //if players guess is right
+}
    
-    //if (underScore.join() == chosenWord){
-   //     alert("The Force is strong with you!");
-   // };
-   /// };
-//};
-//document.getElementById("Star_Wars_words").innerHTML = chosenWords;
-//document.innerHTML = chosenWords.join(" ");
-
-var playerGuesses = [];
-//check correct guess
-var correctGuesses = []
-//guesses left
-var guessesLeft = 6;
-//if wrong push to wrong array
-var wrongGuess = [];
-//player wins and losses
-var wins = 0;
-var losses = 0;
-
-//start game function
-//function startOfGame() {
-   // var 
-    //for (i = 0; i < words.length; i++) {
-       // console.log(randomWords);
-    //}
-//}
-
-
-//startOfGame();
+    console.log(rightLetter);
+    console.log(wrongLetter);
+    console.log(starWarsNames);
 

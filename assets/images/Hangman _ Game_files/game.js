@@ -13,47 +13,30 @@ var words = ["star wars",
 var rightLetter = [];
 var wrongLetter = [];
 var underScore = [];
-var randomWords = Math.floor(Math.random() * words.length);
+var randomWords = words[Math.floor(Math.random() * words.length)];
 //answer array
-var chosenWords = words[randomWords];
-var underScore = [];
-console.log(chosenWords);
-function generateUnderscore() {
-    for (i = 0; i < chosenWords.length; i++) {
-        underScore.push("_");
-    }   
-    return underScore;
+var chosenWords = [];
+for (i = 0; i < randomWords.length; i++) {
+    chosenWords[i] = "_";
+    
 }
-console.log(generateUnderscore());
+//Variable that keeps wrong guesses
+//var remainingLetters = randomWords.length; 
 
 //Game Loop
 document.addEventListener("keypress", letterPressed);
 //letter function
 function letterPressed(event) {
     var letter = String.fromCharCode(event.keyCode);
-    if (chosenWords.indexOf(letter) > -1) {
-        rightLetter.push(letter);
-        underScore[chosenWords.indexOf(letter)] = letter;
-        if(underScore.join(" ") == chosenWords) {
-            alert("The force is strong with you!");
-        }
-    }
-
-    else {
-        wrongLetter.push(letter);
-    }
-        
-        console.log(rightLetter);
-        console.log(wrongLetter);
+    if (letter.indexOf(randomWords) > -1) {
         //push into chosenWords array
-        //rightLetter.push(letter);
+        rightLetter.push(letter);
         //replace underscore with letter
             //underScore[chosenWords.indexOf(letter)] = letter;
-        
+        console.log(true);
        // console.log(rightLetter);
 } 
-
-
+}console.log(chosenWords);
 //console.log(chosenWords);
 //if (remainingLetters < -1) {
     //var PlayerProgress = document.getElementById("Star_Wars_words");

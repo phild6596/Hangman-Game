@@ -26,9 +26,9 @@ console.log(chosenWords);
 function generateUnderscore() {
     for (i = 0; i < chosenWords.length; i++) {
         underScore.push("_");
-    }  
+    };  
     return underScore;
-}
+};generateUnderscore();
 
 //Game Loop
 document.addEventListener("keypress", letterPressed);
@@ -54,3 +54,20 @@ function letterPressed(event) {
     console.log(wrongLetter);
     console.log(starWarsNames);
 
+    //var idx = 0;
+    //idx = chosenWords.indexOf(letter, idx);
+    //if (idx == -1) {
+      //  wrongLetter.push(letter);
+        //incorrectGuess[0].innerHTML = wrongLetter;
+        //return;
+    //}
+    //while (idx > -1) {
+      //  rightLetter.push(letter);
+        //underScore[idx] = letter;
+        //starWarsNames[0].innerHTML = underScore.join(" ");
+        //correctGuess[0].innerHTML = rightLetter;
+        //if (underScore.join(" ") == chosenWords) {
+          //  alert("The force is strong with you!");
+        //}
+        //idx = chosenWords.indexOf(letter, ++idx);
+    //}

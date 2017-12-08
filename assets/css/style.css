@@ -1,9 +1,10 @@
-/*body {
+body {
    background-image: url(../images/starwars.png);
-   background-position: center top;
+   background-size: 800px 700px;
+   background-position: left top;
    background-repeat: no-repeat;
    background-color: black;
-}*/
+}
 
 header {
     font: 24px;
@@ -37,22 +38,30 @@ h3 {
     width: 50%;
     color: red;
     text-align: center;
-    font-size: 80px;
+    font-size: 60px;
 }
 
 .rightGuess {
     clear: both;
     position: relative;
-    top: 30px;
+    float: left;
+    border: 5px dotted;
+    padding: 30px;
+    margin-left: 100px;
+    top: 180px;
     color: blue;
     text-align: center;
-    font-size: 40px;
+    font-size: 60px;
 }
 
 .wrongGuess {
     position: relative;
-    top: 30px;
-    color: red;
+    float: left;
+    border: 5px dotted;
+    padding: 30px;
+    margin-left: 100px;
+    top: 180px;
+    color: green;
     text-align: center;
-    font-size: 30px;
+    font-size: 60px;
 }

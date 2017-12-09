@@ -1,13 +1,14 @@
 //array of Star Wars Names
-var words = ["star wars",
-    "senator organa",
-    "boba fett",
+var words = ["yoda",
+    "tatooine",
+    "emperor",
     "chewbacca",
-    "luke skywalker",
+    "luke",
+    "leia",
     "vader",
-    "lando calrissian",
-    "anakin skywalker",
-    "padme amidala"];
+    "lando",
+    "anakin",
+    "skywalker"];
 
  //Declared variables
 var rightLetter = [];
@@ -18,43 +19,46 @@ var chosenWords = words[randomWords];
 var starWarsNames = document.getElementsByClassName("Star_Wars_words");
 var correctGuess = document.getElementsByClassName("rightGuess");
 var incorrectGuess = document.getElementsByClassName("wrongGuess");
+console.log(wrongLetter);
 
 //Start of game
 function playerConfirm() {
-    var ok = window.confirm("I sense fear in you...care to play?");
-    if (ok){
-        window.alert("lets play!");
+    var play = window.confirm("I sense fear in you...care to play?");
+    if (play){
+        window.alert("Lets play!");
     }
     else {
-        window.alert("See you next time...");
+        window.alert("May the Force be with you.");
     }
 };playerConfirm();
 
 
-//function generateUnderscore() {
+//Random word chosen
     for (i = 0; i < chosenWords.length; i++) {
-        playerGuess[i] = ("_");
+        playerGuess[i] = (" _ ");
     }; 
+    starWarsNames[0].innerHTML = playerGuess.join("");
 
-//Game Loop
+//Game Loop and letter function
 document.addEventListener("keypress", letterPressed);
-//letter function
+
 function letterPressed(event) {
     var letter = String.fromCharCode(event.keyCode);
     var idx = 0;
     idx = chosenWords.indexOf(letter, idx);
+    
     if (idx == -1) {
         wrongLetter.push(letter);
         incorrectGuess[0].innerHTML = wrongLetter;
         return;
-    }
+    } 
     while (idx > -1) {
         rightLetter.push(letter);
         playerGuess[idx] = letter;
-        starWarsNames[0].innerHTML = playerGuess.join(" ");
+        starWarsNames[0].innerHTML = playerGuess.join("");
         correctGuess[0].innerHTML = rightLetter;
-        if (playerGuess.join(" ") === chosenWords) {
-            window.prompt("The force is strong with you, Play again?");
+        if (playerGuess.join("") == chosenWords) {
+            window.alert("The Force is strong with you, play again? Press Restart.");
         }
         idx = chosenWords.indexOf(letter, ++idx);
     }
@@ -62,21 +66,3 @@ function letterPressed(event) {
     console.log(rightLetter);
     console.log(wrongLetter);
     console.log(starWarsNames);
-
-    
-
-    //if (chosenWords.indexOf(letter) > -1) {
-    //    rightLetter.push(letter);
-    //    underScore[chosenWords.indexOf(letter)] = letter;
-    //    starWarsNames[0].innerHTML = underScore.join(" ");
-    //    correctGuess[0].innerHTML = rightLetter;
-    //    if (underScore.join(" ") === chosenWords) {
-    //        alert("The force is strong with you!");
-    //    }
-    //}
-    //else {
-    //    wrongLetter.push(letter);
-    //    incorrectGuess[0].innerHTML = wrongLetter;
-    //}
-//}
-

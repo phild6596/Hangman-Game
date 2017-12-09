@@ -8,12 +8,20 @@ var words = ["yoda",
     "vader",
     "lando",
     "anakin",
-    "skywalker"];
+    "skywalker",
+    "palpatine",
+    "endor",
+    "alderaan",
+    "ewok",
+    "lightsaber",
+    "jedi",
+    "sith"];
 
  //Declared variables
 var rightLetter = [];
 var wrongLetter = [];
 var playerGuess = [];
+var guessesLeft = 5;
 var randomWords = Math.floor(Math.random() * words.length);
 var chosenWords = words[randomWords];
 var starWarsNames = document.getElementsByClassName("Star_Wars_words");
@@ -48,8 +56,18 @@ function letterPressed(event) {
     idx = chosenWords.indexOf(letter, idx);
     
     if (idx == -1) {
-        wrongLetter.push(letter);
+        if (wrongLetter.includes(letter)) {
+            alert("Youve already used that letter");
+        } else {
+            wrongLetter.push(letter);
+        }
         incorrectGuess[0].innerHTML = wrongLetter;
+        guessesLeft--;
+        
+        if (guessesLeft === 0) {
+            alert("Try again next time!");
+        }
+        
         return;
     } 
     while (idx > -1) {

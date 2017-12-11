@@ -22,6 +22,8 @@ var rightLetter = [];
 var wrongLetter = [];
 var playerGuess = [];
 var guessesLeft = 5;
+//Here is where my win var is
+//var wins = 0;
 var randomWords = Math.floor(Math.random() * words.length);
 var chosenWords = words[randomWords];
 var starWarsNames = document.getElementsByClassName("Star_Wars_words");
@@ -55,7 +57,7 @@ function letterPressed(event) {
     var idx = 0;
     idx = chosenWords.indexOf(letter, idx);
     
-    if (idx == -1) {
+    if (idx === -1) {
         if (wrongLetter.includes(letter)) {
             alert("Youve already used that letter");
         } else {
@@ -77,6 +79,9 @@ function letterPressed(event) {
         correctGuess[0].innerHTML = rightLetter;
         if (playerGuess.join("") == chosenWords) {
             window.alert("The Force is strong with you, play again? Press Restart.");
+            //Here is where the wins++ code goes
+            //wins++;
+            //Here is where the code for restarting the game would go, still learning this.
         }
         idx = chosenWords.indexOf(letter, ++idx);
     }
@@ -84,3 +89,4 @@ function letterPressed(event) {
     console.log(rightLetter);
     console.log(wrongLetter);
     console.log(starWarsNames);
+    console.log(wins);
